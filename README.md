@@ -158,6 +158,12 @@ To train the proposed network, please follow the steps:
 
 	python Step4_UNet_MoFA_EM.py --img_path ./image_root/Dataset
 
+  6. Test-time adaptation (Optional) 
+  
+	 To  bridge the domain gap between training and testing data to reach higher performance on the test dataset, test-time adaptation is available with the following command: 
+	
+	python Step4_UNet_MoFA_EM.py --img_path ./image_root/Dataset_adapt --pretrained_model iteration_num
+
 [//]: # (TODO: release model)
 
 ### ● Testing
