@@ -88,7 +88,7 @@ class UNet(nn.Module):
 
         out = self.Conv(d2)
 
-        d1 = self.active(out)
+        d1 = self.active(out*5)
         
         
 

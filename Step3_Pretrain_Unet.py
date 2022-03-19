@@ -21,7 +21,8 @@ par = argparse.ArgumentParser(description='UNet')
 par.add_argument('--epochs',default=51,type=int,help='Total epochs')
 par.add_argument('--batch_size',default=12,type=int,help='Batch sizes')
 par.add_argument('--gpu',default=0,type=int,help='The GPU ID')
-par.add_argument('--pretrained_model',default=0,type=int,help='Pretrained model')
+par.add_argument('--pretrained_model_train',default=0,type=int,help='Pretrained model')
+par.add_argument('--img_path',type=str,help='Root of the training samples')
 
 current_path = os.getcwd()
 
@@ -29,10 +30,10 @@ args = par.parse_args()
 batch = args.batch_size
 epoch = args.epochs
 GPU_no = args.gpu
-ct = args.pretrained_model #load trained model
+ct = args.pretrained_model_train #load trained model
 output_name = 'Pretrain_UNet'
 device = torch.device("cuda:{}".format(util.device_ids[GPU_no]) if torch.cuda.is_available() else "cpu")
-image_path = current_path +'/MoFA_UNet_Save/UNet_trainset/'
+image_path = (args.img_path + '/' ).replace('//','/')
 current_path = os.getcwd()  
 output_path = current_path+'/MoFA_UNet_Save/'+output_name + '/'
 if not os.path.exists(output_path):
@@ -45,10 +46,11 @@ height = 224
 '''----------------
 #load images
 ----------------'''
+
 trainset = load_dataset.UNetDataset(device,image_path, True,height,width,1)
 trainloader = torch.utils.data.DataLoader(trainset, batch_size=batch,shuffle=True, num_workers=0)
 
-testset = load_dataset.UNetDataset(device,image_path, False,height,width,1)
+testset = load_dataset.UNetDataset(device,image_path,False,height,width,1)
 testloader = torch.utils.data.DataLoader(testset, batch_size=batch,shuffle=False, num_workers=0)
 
 images_org_test = []
@@ -109,7 +111,7 @@ for ep in range(0,epoch):
 	for i, data in enumerate(trainloader, 0):
         
 		#Evaluation
-		if ct % 500 == 0 and ct>0:
+		if ct % 1000 == 0 and ct>0:
 			
 			test_masks = []
 			for images_temp, mask_gt_temp in zip(images_input , images_mask_test):
@@ -123,8 +125,8 @@ for ep in range(0,epoch):
             
 			if ct % 5000 ==0:
 				torch.save(unet_mask, output_path + 'unet_mask_{:06d}.model'.format(ct))
-            #validating
-			if ct % 1000 == 0:
+                #validating
+			if ct % 2000 == 0:
 				print('UNet Training mode:'+output_name)
 				c_test=0
 				mean_test_losses = torch.zeros([1])
