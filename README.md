@@ -22,7 +22,7 @@ This work enables a model-based face autoencoder to segment occlusions accuratel
 This method provides reliable occlusion segmentation masks and the training of the segmentation network **does not require any additional supervision**.
 
 <p align="center"> 
-<img src="https://github.com/ChunLLee/Occlusion_Robust_MoFA/blob/main/visual_results.jpg">
+<img src="https://github.com/unibas-gravis/Occlusion-Robust-MoFA/blob/main/visual_results.jpg">
 </p>
 
 
@@ -56,17 +56,17 @@ This method follows a step-wise manner and is easy to implement.
 
 To train and/or test this work, you need to:
 
-   1. [Prepare the data](https://github.com/ChunLLee/Occlusion_Robust_MoFA#-data-preparation)
+   1. [Prepare the data](https://github.com/unibas-gravis/Occlusion-Robust-MoFA#-data-preparation)
     
-   2. [Download 3DMM](https://github.com/ChunLLee/Occlusion_Robust_MoFA#-download-3dmm)
+   2. [Download 3DMM](https://github.com/unibas-gravis/Occlusion-Robust-MoFA#-download-3dmm)
    
-   3. [Install Arcface](https://github.com/ChunLLee/Occlusion_Robust_MoFA#-install-arcface-for-perceptual-loss)
+   3. [Install Arcface](https://github.com/unibas-gravis/Occlusion-Robust-MoFA#-install-arcface-for-perceptual-loss)
     
-   4. [Install Dependencies](https://github.com/ChunLLee/Occlusion_Robust_MoFA#-install-dependencies)
+   4. [Install Dependencies](https://github.com/unibas-gravis/Occlusion-Robust-MoFA#-install-dependencies)
     
-   5. [Train step-by-step](https://github.com/ChunLLee/Occlusion_Robust_MoFA#-step-wise-training)
+   5. [Train step-by-step](https://github.com/unibas-gravis/Occlusion-Robust-MoFA#-step-wise-training)
    
-   6. [Test](https://github.com/ChunLLee/Occlusion_Robust_MoFA#-testing)
+   6. [Test](https://github.com/unibas-gravis/Occlusion-Robust-MoFA#-testing)
 
 ### ● Data Preparation
   
@@ -158,7 +158,7 @@ To train the proposed network, please follow the steps:
 
 	python Step4_UNet_MoFA_EM.py --img_path ./image_root/Dataset
 
-[//]: # (### ● Test with Pre-trained Model To test the proposed method, please download the [pretrained model]http://GoogleDrive//TOBERELEASED and save the model at './Pretrained_Model' and then conduct 'demo.py'.)
+[//]: # (TODO: release model)
 
 ### ● Testing
    To test the model saved as './MoFA_UNet_Save/model-path/model-name', use the command below:
