@@ -1,5 +1,5 @@
 # To fit or not to fit: Model-based Face Reconstruction and Occlusion Segmentation from Weak Supervision 
-
+##Chunlu Li, Andreas Morel-Forster, Thomas Vetter, [Bernhard Egger*](https://eggerbernhard.ch/), and [Adam Kortylewski*](https://generativevision.mpi-inf.mpg.de/)
 This is a pytorch implementation of the following paper:
 
 [To fit or not to fit: Model-based Face Reconstruction and Occlusion Segmentation from Weak Supervision](https://arxiv.org/pdf/2106.09614.pdf)
@@ -176,14 +176,11 @@ To train the proposed network, please follow the steps:
 
 Please cite the following papers if this model helps your research:
 
-    @inproceedings{koizumi2020look,
-      title={To fit or not to fit: Model-based Face Reconstruction and Occlusion Segmentation from Weak Supervision},
-      author={},
-      booktitle={},
-      pages={},
-      year={2021},
-      organization={}
-    }
+    @article{li2021fit,
+    title={To fit or not to fit: Model-based Face Reconstruction and Occlusion Segmentation from Weak Supervision},
+    author={Li, Chunlu and Morel-Forster, Andreas and Vetter, Thomas and Egger, Bernhard and Kortylewski, Adam},
+    journal={arXiv preprint arXiv:2106.09614},
+    year={2021}}
     
 This code is built on top of the MoFA re-implementation from Tatsuro Koizumi. If you establish your own work based on our work, please also cite the following paper:
 
