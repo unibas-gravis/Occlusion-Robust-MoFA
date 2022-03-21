@@ -1,5 +1,7 @@
 # To fit or not to fit: Model-based Face Reconstruction and Occlusion Segmentation from Weak Supervision 
-##Chunlu Li, Andreas Morel-Forster, Thomas Vetter, [Bernhard Egger*](https://eggerbernhard.ch/), and [Adam Kortylewski*](https://generativevision.mpi-inf.mpg.de/)
+
+## Chunlu Li, [Andreas Morel-Forster](http://gravis.dmi.unibas.ch/people/ForsterA.html), [Thomas Vetter](http://gravis.dmi.unibas.ch/people/VetterT.html), [Bernhard Egger*](https://eggerbernhard.ch/), and [Adam Kortylewski*](https://generativevision.mpi-inf.mpg.de/)
+
 This is a pytorch implementation of the following paper:
 
 [To fit or not to fit: Model-based Face Reconstruction and Occlusion Segmentation from Weak Supervision](https://arxiv.org/pdf/2106.09614.pdf)
