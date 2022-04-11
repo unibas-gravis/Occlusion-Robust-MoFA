@@ -46,16 +46,17 @@ def calc_vertex_to_face_map(vertex, face):
 
 def calc_vertex_normal(face_normal,face_area,vertex_to_face):
 
-    vertex_mask = (vertex_to_face != -1).float().unsqueeze(0).unsqueeze(0)
+    vertex2face_temp = vertex_to_face.clone()
+    vertex_mask = (vertex2face_temp != -1).float().unsqueeze(0).unsqueeze(0)
 
     #set 0 as dummy value in empty map
-    vertex_to_face[vertex_to_face == -1] = 0
+    vertex2face_temp[vertex2face_temp == -1] = 0
 
     #generate non-empty map mask
     
     #calc weighted average of face normal
-    normal_sum = torch.sum(vertex_mask * face_normal[:, :, vertex_to_face] * face_area[:, :, vertex_to_face], 2)
-    weight_sum = torch.sum(vertex_mask*face_area[:, :, vertex_to_face],dim=2)
+    normal_sum = torch.sum(vertex_mask * face_normal[:, :, vertex2face_temp] * face_area[:, :, vertex2face_temp], 2)
+    weight_sum = torch.sum(vertex_mask*face_area[:, :, vertex2face_temp],dim=2)
     vertex_normal = normal_sum / torch.clamp(weight_sum,min=ftiny)
 
     return vertex_normal
