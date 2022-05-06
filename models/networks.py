@@ -37,7 +37,6 @@ class RecogNetWrapper(nn.Module):
         resized=resize_n_crop(image, M, self.input_size)
         #util.show_tensor_images(resized,batch=12)
         image = self.preprocess(resized)
-        image=resized
         feature = self.net(image,is_shallow)
         id_feature = F.normalize(feature, dim=-1, p=2)
         return id_feature
