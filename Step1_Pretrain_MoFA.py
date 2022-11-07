@@ -231,7 +231,7 @@ for ep in range(0,epoch):
 					l_loss_,_, raster_image, raster_mask, fg_mask = proc(images,landmarks,True)
 					
 					test_raster_images += [images*(1-raster_mask.unsqueeze(1))+raster_image*raster_mask.unsqueeze(1)]
-					test_fg_masks += [fg_mask.reshape(batch,1,224,224)]
+					test_fg_masks += [fg_mask.unsqueeze(1)]
 				util.write_tiled_image(torch.cat(test_raster_images,dim=0),output_path+'test_image_{}.png'.format(ct),10)
 				util.write_tiled_image(torch.cat(test_fg_masks, dim=0), output_path + 'test_image_fgmask_{}.png'.format(ct),10)
 
