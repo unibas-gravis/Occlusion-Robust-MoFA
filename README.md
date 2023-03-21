@@ -1,14 +1,15 @@
-# To fit or not to fit: Model-based Face Reconstruction and Occlusion Segmentation from Weak Supervision 
+# Robust Model-based Face Reconstruction through Weakly-Supervised Outlier Segmentation
 
-## Chunlu Li, [Andreas Morel-Forster](http://gravis.dmi.unibas.ch/people/ForsterA.html), [Thomas Vetter](http://gravis.dmi.unibas.ch/people/VetterT.html), [Bernhard Egger*](https://eggerbernhard.ch/), and [Adam Kortylewski*](https://generativevision.mpi-inf.mpg.de/)
+ Chunlu Li, [Andreas Morel-Forster](http://gravis.dmi.unibas.ch/people/ForsterA.html), [Thomas Vetter](http://gravis.dmi.unibas.ch/people/VetterT.html), [Bernhard Egger*](https://eggerbernhard.ch/), and [Adam Kortylewski*](https://generativevision.mpi-inf.mpg.de/)
 
-This is a pytorch implementation of the following paper:
-
-[To fit or not to fit: Model-based Face Reconstruction and Occlusion Segmentation from Weak Supervision](https://arxiv.org/pdf/2106.09614.pdf)
+[pdf](https://arxiv.org/pdf/2106.09614.pdf) | [video](https://youtu.be/7nKbNmupViM)
 
 
 This work enables a model-based face autoencoder to segment occlusions accurately for 3D face reconstruction and provides state-of-the-art occlusion segmentation results and the face reconstruction is robust to occlusions. It requires only weak supervision for the face reconstruction subnetwork and can be trained end-to-end efficiently. The effectiveness of this method is verified on the Celeb A HQ dataset, the AR dataset, and the NoW Challenge.
 
+#### ● [Update 20230321] Accepted by CVPR 2023!
+  1. Docker with pre-trained model coming soon.
+  
 #### ● [Update 20210315] Reached the SOTA on the NoW Challenge!
   1. The ArcFace for perceptual-level loss.
 
