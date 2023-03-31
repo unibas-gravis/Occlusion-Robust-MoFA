@@ -192,7 +192,9 @@ To train the proposed network, please follow the steps:
 
   2. Run a container with your data directory /DataDir mounted.
 
-    docker run -v /DataDir/:/FOCUS/data -itd chunluli/focus:1.2 /bin/bash docker attach containerID
+    docker run -v /DataDir:/FOCUS/data -itd chunluli/focus:1.2 /bin/bash 
+    
+    docker attach containerID
 
   3. Run the following command to see how to use the codes:
 
