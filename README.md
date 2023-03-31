@@ -7,6 +7,9 @@
 
 This work enables a model-based face autoencoder to segment occlusions accurately for 3D face reconstruction and provides state-of-the-art occlusion segmentation results and the face reconstruction is robust to occlusions. It requires only weak supervision for the face reconstruction subnetwork and can be trained end-to-end efficiently. The effectiveness of this method is verified on the Celeb A HQ dataset, the AR dataset, and the NoW Challenge.
 
+
+#### ● [Update 20230331] Docker image with trained model available now!
+
 #### ● [Update 20230321] Accepted by CVPR 2023!
   1. Docker with pre-trained model coming soon.
   
@@ -174,6 +177,27 @@ To train the proposed network, please follow the steps:
    
 	python Demo.py --img_path ./image_root/Dataset --pretrained_model_test ./MoFA_UNet_Save/model-path/model-name.model --test_mode pipeline_name --test_path test_dataset_root --save_path save_path --landmark_list_name landmark_filename_optional.csv
 
+## Docker Image
+
+### ● Differences
+  1. .csv files are no longer required in the docker version. Instead, the landmarks are automatically detected.
+  2. Fixed the naming of some variables.
+  3. Misfit prior is also included in the docker image.
+
+### ● Getting started
+
+  1. Pull.
+
+    sudo docker pull chunluli/focus:1.2
+
+  2. Run a container with your data directory /DataDir mounted.
+
+    docker run -v /DataDir/:/FOCUS/data -itd chunluli/focus:1.2 /bin/bash docker attach containerID
+
+  3. Run the following command to see how to use the codes:
+
+    python show_instructions.py
+
 
 ## Citation
 
@@ -185,7 +209,7 @@ Please cite the following papers if this model helps your research:
     journal={arXiv preprint arXiv:2106.09614},
     year={2021}}
     
-This code is built on top of the MoFA re-implementation from Tatsuro Koizumi. If you establish your own work based on our work, please also cite the following paper:
+This code is built on top of the MoFA re-implementation from Tatsuro Koizumi and the data processing is on top of the Deep3D. If you establish your own work based on our work, please also cite the following papers:
 
     @inproceedings{koizumi2020look,
       title={“Look Ma, no landmarks!”--Unsupervised, model-based dense face alignment},
@@ -194,4 +218,11 @@ This code is built on top of the MoFA re-implementation from Tatsuro Koizumi. If
       pages={690--706},
       year={2020},
       organization={Springer}
+    }
+    
+    @inproceedings{deng2019accurate,
+    title={Accurate 3D Face Reconstruction with Weakly-Supervised Learning: From Single Image to Image Set},
+    author={Yu Deng and Jiaolong Yang and Sicheng Xu and Dong Chen and Yunde Jia and Xin Tong},
+    booktitle={IEEE Computer Vision and Pattern Recognition Workshops},
+    year={2019}
     }
