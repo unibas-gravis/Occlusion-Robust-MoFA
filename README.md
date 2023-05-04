@@ -8,7 +8,7 @@
 This work enables a model-based face autoencoder to segment occlusions accurately for 3D face reconstruction and provides state-of-the-art occlusion segmentation results and the face reconstruction is robust to occlusions. It requires only weak supervision for the face reconstruction subnetwork and can be trained end-to-end efficiently. The effectiveness of this method is verified on the Celeb A HQ dataset, the AR dataset, and the NoW Challenge.
 
 
-#### ● [Update 20230331] Docker image with trained model available now!
+#### ● [Update 20230331] [Docker image](https://hub.docker.com/r/chunluli/focus) with trained model available now!
 
 #### ● [Update 20230321] Accepted by CVPR 2023!
   1. Docker with pre-trained model coming soon.
@@ -199,6 +199,8 @@ To train the proposed network, please follow the steps:
   3. Run the following command to see how to use the codes:
 
     python show_instructions.py
+   
+  More information can be found in [dockerhub](https://hub.docker.com/r/chunluli/focus).
 
 
 ## Citation
